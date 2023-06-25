@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Page() {
+function EventCatPage() {
   return (
     <div>
-      <h1>aaaaa</h1>
+      <h1>Events in London </h1>
       <a href="/events/event1">event1</a>
       <a href="/events/event2">event2</a>
       <a href="/events/event3">event3</a>
@@ -14,4 +14,4 @@ function Page() {
   )
 }
 
-export default Page
+export default EventCatPage
