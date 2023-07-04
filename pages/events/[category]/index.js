@@ -1,13 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
-function EventCatPage({ data }) {
+function EventCatPage({ data, pageName }) {
   return (
     <div>
-      <h1>Events in London </h1>
+      <h1>Events in {pageName} </h1>
       <div>
         {data.map((event) => (
-          <a key={event.id} href={`/events/${event.city}/${event.id}`}>
+          <Link key={event.id} href={`/events/${event.city}/${event.id}`}>
             {event.title}
 
             <Image
@@ -18,15 +19,9 @@ function EventCatPage({ data }) {
             />
             <h2>{event.title}</h2>
             <p>{event.description}</p>
-          </a>
+          </Link>
         ))}
       </div>
-      {/* <a href="/events/event1">event1</a>
-      <a href="/events/event2">event2</a>
-      <a href="/events/event3">event3</a>
-      <a href="/events/event4">event4</a>
-      <a href="/events/event5">event5</a>
-      <a href="/events/event6">event6</a> */}
     </div>
   )
 }
@@ -55,5 +50,6 @@ export async function getStaticProps(context) {
   const { allEvents } = await import('/data/data.json')
   const data = allEvents.filter((event) => event.city === id)
   console.log('city', data)
-  return { props: { data } }
+  console.log('id', id)
+  return { props: { data, pageName: id } }
 }
