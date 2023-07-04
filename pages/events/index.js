@@ -7,7 +7,7 @@ function EventsPage({ data }) {
       <h1>events page</h1>
       <div>
         {data.map((event) => (
-          <a key={event.title} href={`/events/${event.id}`}>
+          <a key={event.title} href={`/events/${event.title}`}>
             <Image
               width={200}
               height={'200'}
