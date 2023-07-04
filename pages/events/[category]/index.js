@@ -1,15 +1,32 @@
 import React from 'react'
+import Image from 'next/image'
 
-function EventCatPage() {
+function EventCatPage({ data }) {
   return (
     <div>
       <h1>Events in London </h1>
-      <a href="/events/event1">event1</a>
+      <div>
+        {data.map((event) => (
+          <a key={event.id} href={`/events/${event.city}/${event.id}`}>
+            {event.title}
+
+            <Image
+              width={250}
+              height={'200'}
+              alt={event.title}
+              src={event.image}
+            />
+            <h2>{event.title}</h2>
+            <p>{event.description}</p>
+          </a>
+        ))}
+      </div>
+      {/* <a href="/events/event1">event1</a>
       <a href="/events/event2">event2</a>
       <a href="/events/event3">event3</a>
       <a href="/events/event4">event4</a>
       <a href="/events/event5">event5</a>
-      <a href="/events/event6">event6</a>
+      <a href="/events/event6">event6</a> */}
     </div>
   )
 }
@@ -25,7 +42,6 @@ export async function getStaticPaths() {
       },
     }
   })
-  console.log('1111', allPaths)
 
   return {
     paths: allPaths,
@@ -34,6 +50,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  console.log(context)
-  return { props: {} }
+  const id = context.params.category
+
+  const { allEvents } = await import('/data/data.json')
+  const data = allEvents.filter((event) => event.city === id)
+  console.log('city', data)
+  return { props: { data } }
 }
