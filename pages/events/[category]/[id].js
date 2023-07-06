@@ -4,7 +4,7 @@ import Image from 'next/image'
 function EventPage({ data }) {
   return (
     <div>
-      <Image alt={data.title} src={data.image} width={500} height={300} />
+      <Image alt={data.title} src={data.image} width={1000} height={300} />
       <h1>{data.title}</h1>
       <p>{data.description}</p>
     </div>
