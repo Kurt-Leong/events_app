@@ -17,10 +17,15 @@ export default function Home({ data }) {
       </Head>
       <header>
         <nav>
-          <img />
-          <a href="/">Home</a>
-          <a href="/events">Events</a>
-          <a href="/about-us">About Us</a>
+          <Link legacyBehavior href="/" passHerf>
+            <a>Home</a>
+          </Link>
+          <Link legacyBehavior href="/events" passHerf>
+            <a>Events</a>
+          </Link>
+          <Link legacyBehavior href="/about-us" passHerf>
+            <a>About Us</a>
+          </Link>
         </nav>
       </header>
       <main className={`${styles.main} ${inter.className}`}>
