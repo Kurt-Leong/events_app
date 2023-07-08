@@ -49,7 +49,6 @@ export async function getStaticProps(context) {
 
   const { allEvents } = await import('/data/data.json')
   const data = allEvents.filter((event) => event.city === id)
-  console.log('city', data)
-  console.log('id', id)
+
   return { props: { data, pageName: id } }
 }
