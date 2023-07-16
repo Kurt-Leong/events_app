@@ -2,30 +2,77 @@ header
  height:200px
  padding:20px
  background: linear-gradient(209deg, #15546f, transparent)
- display:flex
- flex-direction:column
- justify-content:space-between
+ display: flex
+ flex-direction: column
+ justify-content: space-between
  h1
-  width:60%
+  width:50%
   font-size:40px
-  text-transform:uppercase
+  text-transform: uppercase
+    
 .topNav
-  display:flex
-  justify-content:space-between
-  align-content:center
+  display: flex
+  justify-content: space-between
+  align-content: center 
+
   ul
-   display:flex
-   text-decoration:none
-   list-style:none
-   gap:15px
+   display: flex
+   text-decoration: none
+   list-style: none
+   gap: 15px
    li
-    font-weight:600
-    font-size:16px 
+    font-weight: 600
+    font-size: 16px 
 
 
 
 footer
-  background-color:#333
+  background-color:#333 
   color:#fff
-  padding:10px
-  text-align:center
+  padding: 10px
+  text-align: center
+
+main
+ width:100%
+ max-width:1250px
+ margin:auto
+ padding:50px 30px
+
+// .home_body
+//  display: flex
+//  flex-direction: column
+//  gap:50px
+//  .card
+//   display: flex
+//   flex-direction: row
+//   gap:30px
+//   justify-content: center
+//   align-content: center
+//   align-items: center
+//   &:nth-child(even)
+//     diretction:rtl
+//   .image
+//   width:40%
+//   .content
+//     width: 50%
+
+.home_body
+  display: flex
+  flex-direction: column
+  gap: 50px
+  .image
+    width: 40%
+  .card
+    display: flex
+    flex-direction: row
+    gap: 30px
+    justify-content: center
+    align-content: center
+    align-items: center
+    &:nth-child(even)
+      direction: rtl
+    .content
+      width: 50%   
+
+
+  

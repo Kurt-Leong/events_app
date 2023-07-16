@@ -6,7 +6,7 @@ function Mainlayout({ children }) {
   return (
     <div>
       <Header />
-      {children}
+      <main>{children}</main>
       <Footer />
     </div>
   )
