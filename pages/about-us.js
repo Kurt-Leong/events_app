@@ -32,6 +32,32 @@ function AboutUs() {
         Sed maximus dolor et tempus aliquet. Pellentesque euismod leo ut lacus
         pharetra lacinia.
       </p>
+      <h2>Maecenas velit lacus</h2>
+      <p>
+        Nunc fringilla orci quis feugiat eleifend. Maecenas velit lacus, mollis
+        eget nulla vitae, mattis accumsan libero. Sed maximus dolor et tempus
+        aliquet. Pellentesque euismod leo ut lacus pharetra lacinia.
+      </p>
+      <ul className="about_us_list">
+        <li>
+          <h3>Maecenas velit lacus</h3>
+          <p>
+            Nunc fringilla orci quis feugiat eleifend. Maecenas velit lacus,
+            mollis eget nulla vitae, mattis accumsan libero. Sed maximus dolor
+            et tempus aliquet. Pellentesque euismod leo ut lacus pharetra
+            lacinia.
+          </p>
+        </li>
+        <li>
+          <h3>Maecenas velit lacus</h3>
+          <p>
+            Nunc fringilla orci quis feugiat eleifend. Maecenas velit lacus,
+            mollis eget nulla vitae, mattis accumsan libero. Sed maximus dolor
+            et tempus aliquet. Pellentesque euismod leo ut lacus pharetra
+            lacinia.
+          </p>
+        </li>
+      </ul>
     </div>
   )
 }
