@@ -28,10 +28,7 @@ function Header() {
             </ul>
           </nav>
         </div>
-        <h1>
-          Sed nulla sapien, ultricies sit amet posuere quis, commodo quis
-          sapien.
-        </h1>
+        <h1>Sed nulla sapien, ultricies sit amet posuere quis.</h1>
       </div>
     </header>
   )
