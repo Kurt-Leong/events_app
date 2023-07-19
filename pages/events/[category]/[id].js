@@ -1,14 +1,8 @@
+import SingleEvent from '@/src/components/events/singleEvent'
 import React from 'react'
-import Image from 'next/image'
 
 function EventPage({ data }) {
-  return (
-    <div>
-      <Image alt={data.title} src={data.image} width={500} height={300} />
-      <h1>{data.title}</h1>
-      <p>{data.description}</p>
-    </div>
-  )
+  return <SingleEvent data={data} />
 }
 
 export default EventPage

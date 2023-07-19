@@ -1,30 +1,28 @@
-import React from 'react'
 import Image from 'next/image'
+import React from 'react'
 import Link from 'next/link'
 
-function HomePage({ data }) {
+function AllEvents({ data }) {
   return (
     <div>
-      <div className="home_body">
+      <h1>Events Page</h1>
+      <div className="events_page">
         {data.map((event) => (
           <Link
-            className="card"
-            key={event.id}
-            href={`events/${event.id}`}
+            legacyBehavior
+            key={event.title}
+            href={`/events/${event.id}`}
             passHref
           >
-            <div className="image">
+            <a className="card">
               <Image
-                width={250}
+                width={200}
                 height={'200'}
                 alt={event.title}
                 src={event.image}
               />
-            </div>
-            <div className="content">
               <h2>{event.title}</h2>
-              <p>{event.description}</p>
-            </div>
+            </a>
           </Link>
         ))}
       </div>
@@ -32,4 +30,4 @@ function HomePage({ data }) {
   )
 }
 
-export default HomePage
+export default AllEvents
