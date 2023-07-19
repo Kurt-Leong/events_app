@@ -13,6 +13,7 @@ function extractData(filePath) {
 
 export default function handler(req, res) {
   const { method } = req
+
   // Access our Data
   // extract our Data (ALlEvents)
   //res 404 if there are no AllEvents
@@ -32,12 +33,18 @@ export default function handler(req, res) {
   }
   if (method === 'POST') {
     const { email, eventId } = req.body
+
+    if (!email | !email.includes('@')) {
+      res.status(422).json({ message: 'invalid email address' })
+      return
+    }
     const newAllEvents = allEvents.map((event) => {
       if (event.id === eventId) {
         if (event.emails_registered.includes(email)) {
           res
-            .status(201)
+            .status(409)
             .json({ message: 'This email has already been registered' })
+          return event
         }
         return {
           ...event,
